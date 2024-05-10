@@ -4,7 +4,6 @@ package hu.bme.mit.spaceship;
 * A simple spaceship with two proton torpedo stores and four lasers
 */
 public class GT4500 implements SpaceShip {
-
   private TorpedoStore primaryTorpedoStore;
   private TorpedoStore secondaryTorpedoStore;
 
@@ -13,6 +12,12 @@ public class GT4500 implements SpaceShip {
   public GT4500() {
     this.primaryTorpedoStore = new TorpedoStore(10);
     this.secondaryTorpedoStore = new TorpedoStore(10);
+  }
+
+  //For mocking
+  public GT4500(TorpedoStore p, TorpedoStore s) {
+    this.primaryTorpedoStore = p;
+    this.secondaryTorpedoStore = s;
   }
 
   public boolean fireLaser(FiringMode firingMode) {
